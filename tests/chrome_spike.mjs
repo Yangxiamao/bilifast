@@ -7,7 +7,7 @@ import { spawn } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { streamInfo, onHost } from "./h2_bench.mjs";
+import { streamInfo, onHost } from "./stream_info.mjs";
 
 const args = process.argv.slice(2).filter(a => !a.startsWith("--"));
 const BVID = args[0] || "BV1bE41127s6";
@@ -139,9 +139,9 @@ async function evaluate(cdp, sid, expr) {
 }
 
 async function main() {
-  const info = streamInfo(BVID);
+  const info = await streamInfo(BVID);
   const base = info.video.find(x => new URL(x).hostname.startsWith("upos-") && x.includes(".bilivideo.com")) || info.video[0];
-  const profile = fs.mkdtempSync(path.join(os.tmpdir(), "bilidl-spike-"));
+  const profile = fs.mkdtempSync(path.join(os.tmpdir(), "bilifast-spike-"));
   const chrome = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${PORT}`, `--user-data-dir=${profile}`,
     "--no-first-run", "--no-default-browser-check", "--autoplay-policy=no-user-gesture-required", "--mute-audio", `--user-agent=${UA}`,
     "about:blank"], { stdio: "ignore" });

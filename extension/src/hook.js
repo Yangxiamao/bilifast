@@ -6,7 +6,7 @@
 import { Engine, PROFILES } from "./engine.js";
 
 const RANGE = /^bytes=(\d+)-(\d+)$/;
-const EV = "bilidl-play:";  // 和 bridge.js（ISOLATED world）通信用的事件前缀，detail 一律是 JSON 字符串
+const EV = "bilifast:";  // 和 bridge.js（ISOLATED world）通信用的事件前缀，detail 一律是 JSON 字符串
 
 export function install(win) {
   const doc = win.document;

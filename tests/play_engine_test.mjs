@@ -1,7 +1,7 @@
-// 播放加速插件的缓存和调度（extension-play/src/engine.js）的离线测试：用假的 CDN 代替 fetch，不联网。
+// 播放加速插件的缓存和调度（extension/src/engine.js）的离线测试：用假的 CDN 代替 fetch，不联网。
 // 用法: node tests/play_engine_test.mjs
 import assert from "node:assert/strict";
-import { Engine, CHUNK } from "../extension-play/src/engine.js";
+import { Engine, CHUNK } from "../extension/src/engine.js";
 import { FAST_HOSTS, hostOf, HostHealth, pick } from "../shared/hosts.js";
 
 const SIZE = 40 * CHUNK + 12345;  // 比最小预读窗口（32 MB）大，测得到窗口外的跳转

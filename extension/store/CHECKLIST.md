@@ -6,14 +6,14 @@
 - 发布者名称会公开显示在商店里，想好用什么名字。
 
 ## 2. 上传的包
-- `node tools/build_ext.mjs --zip` 生成 `dist/extension-play-<版本>.zip`，就是 GitHub Release 里的那个 zip，直接上传。
-- 每次更新都要把 `extension-play/manifest.json` 里的 `version` 调大，商店不接受同一个版本号。
+- `node tools/build_ext.mjs --zip` 生成 `dist/bilifast-<版本>.zip`，就是 GitHub Release 里的那个 zip，直接上传。
+- 每次更新都要把 `extension/manifest.json` 里的 `version` 调大，商店不接受同一个版本号。
 - 代码不要压缩、混淆：审核时会看代码，`page.js` 是几个源文件直接拼起来的，保持可读。
 
 ## 3. 图片
 | 图片 | 规格 | 状态 |
 |---|---|---|
-| 商店图标 | 128x128 PNG，图案 96x96、四周 16px 透明边 | ✅ `extension-play/icons/128.png`（`node tools/make_icons.mjs` 生成） |
+| 商店图标 | 128x128 PNG，图案 96x96、四周 16px 透明边 | ✅ `extension/icons/128.png`（`node tools/make_icons.mjs` 生成） |
 | 小宣传图 | 440x280，JPEG 或不带透明通道的 PNG | ✅ `promo-440x280.jpg` |
 | 截图 | 1280x800 或 640x400，1~5 张，JPEG 或不带透明通道的 PNG | ✅ 效果对比图 `screenshot-compare-1280x800.jpg`；**还要你自己截 1~2 张真实截图**，见下面 |
 | 大宣传图 | 1400x560 | 可选，不做 |

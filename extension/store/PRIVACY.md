@@ -1,4 +1,4 @@
-# bilidl 播放加速：隐私说明
+# bilifast 播放加速：隐私说明
 
 最后更新：2026-10-29
 
@@ -24,7 +24,7 @@
 为了预读，插件会在当前标签页的内存里暂存视频数据（每个标签页有上限，可以在弹出页里看到）。关掉标签页、关闭加速、或闲置 10 分钟后就会释放，不写入硬盘。
 
 ## 联系
-问题和反馈请到 <https://github.com/Yangxiamao/bilidl/issues>。源代码公开在 <https://github.com/Yangxiamao/bilidl>（`extension-play/` 和 `shared/` 目录）。
+问题和反馈请到 <https://github.com/Yangxiamao/bilifast/issues>。源代码公开在 <https://github.com/Yangxiamao/bilifast>（`extension/` 和 `shared/` 目录）。
 
 ---
 
@@ -36,4 +36,4 @@
 - **Where it runs:** only `https://www.bilibili.com/video/*`, `/list/*` and `/bangumi/play/*` (including language-prefixed paths such as `/zh-Hans/`).
 - **Permissions:** only `storage`, used to remember two settings locally (on/off and the low/mid/high profile). No cookies, history, tabs, downloads or webRequest permissions.
 - **Memory:** buffered video data is kept in the tab's memory only (capped per tab) and is released when the tab closes, acceleration is turned off, or after 10 minutes idle. Nothing is written to disk.
-- **Contact:** <https://github.com/Yangxiamao/bilidl/issues>. Source code: <https://github.com/Yangxiamao/bilidl>.
+- **Contact:** <https://github.com/Yangxiamao/bilifast/issues>. Source code: <https://github.com/Yangxiamao/bilifast>.

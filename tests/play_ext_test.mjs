@@ -1,4 +1,4 @@
-// 播放加速插件（extension-play/）的端到端验收：用临时 profile 启动无头 Chrome，加载打包好的插件，打开真实的 B 站视频页。
+// 播放加速插件（extension/）的端到端验收：用临时 profile 启动无头 Chrome，加载打包好的插件，打开真实的 B 站视频页。
 //   correct：在页面里用 XHR 发各种 Range，接管返回的数据和直连逐字节比较；认不出的请求原样放行；插件的 fetch 全部失败时退回直连。
 //   bench：  在页面里模拟播放器（一次取一个约 2 秒的分段，缓冲到 72 秒停；1x → 2x → 跳到 60% → 3x），比较插件关闭（直连）和开启时的卡顿。
 //   player： 真实播放器按同样的四个阶段改倍速、跳转，按 waiting 事件统计卡顿，开启和关闭各一次。
@@ -11,7 +11,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { streamInfo } from "./h2_bench.mjs";
+import { streamInfo } from "./stream_info.mjs";
 import { build } from "../tools/build_ext.mjs";
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
@@ -67,15 +67,15 @@ export async function evaluate(cdp, sid, expr, timeout = 600000) {
 // 页面里向 page.js 要一份状态（和 bridge.js 用的是同一个事件）
 export const STATS_JS = `new Promise(ok => {
   const id = "t" + Math.random();
-  const h = e => { const s = JSON.parse(e.detail); if (s.id === id) { document.removeEventListener("bilidl-play:stats", h); ok(s); } };
-  document.addEventListener("bilidl-play:stats", h);
-  document.dispatchEvent(new CustomEvent("bilidl-play:get", { detail: id }));
+  const h = e => { const s = JSON.parse(e.detail); if (s.id === id) { document.removeEventListener("bilifast:stats", h); ok(s); } };
+  document.addEventListener("bilifast:stats", h);
+  document.dispatchEvent(new CustomEvent("bilifast:get", { detail: id }));
   setTimeout(() => ok(null), 2000);
 })`;
 
 export class Browser {
   async start() {
-    this.profile = fs.mkdtempSync(path.join(os.tmpdir(), "bilidl-play-"));
+    this.profile = fs.mkdtempSync(path.join(os.tmpdir(), "bilifast-play-"));
     this.child = spawn(CHROME, ["--headless=new", "--remote-debugging-pipe", "--enable-unsafe-extension-debugging",
       `--user-data-dir=${this.profile}`, "--no-first-run", "--no-default-browser-check",
       "--autoplay-policy=no-user-gesture-required", "--mute-audio", `--user-agent=${UA}`, "about:blank"],
@@ -516,7 +516,7 @@ async function nav(b) {
 }
 
 async function main() {
-  const info = streamInfo(BVID);
+  const info = await streamInfo(BVID);
   const b = new Browser();
   await b.start();
   let bad = 0;

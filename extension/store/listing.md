@@ -6,7 +6,7 @@
 
 **名称**（最多 75 个字符）
 ```
-bilidl 播放加速
+bilifast 播放加速
 ```
 
 **简短说明**（Summary，最多 132 个字符）
@@ -44,8 +44,8 @@ B 站网页播放器多路并发预读：4K、倍速、跳转都不卡。只装�
 【说明】
 · 这是个人开发的开源插件，不是 B 站官方插件。
 · 只加速 B 站网页上的播放，不提供下载功能，不能绕过会员或付费限制，看不了的视频装了插件也看不了。
-· 源代码：https://github.com/Yangxiamao/bilidl
-· 问题反馈：https://github.com/Yangxiamao/bilidl/issues
+· 源代码：https://github.com/Yangxiamao/bilifast
+· 问题反馈：https://github.com/Yangxiamao/bilifast/issues
 ```
 
 **类别**：选「工具」（Tools）；后台的类别列表有变化时选最接近「视频 / 工具」的一项。
@@ -53,11 +53,11 @@ B 站网页播放器多路并发预读：4K、倍速、跳转都不卡。只装�
 **语言**：中文（简体）
 
 **图片**（见 [CHECKLIST.md](CHECKLIST.md)）
-- 商店图标 128x128：`extension-play/icons/128.png`
+- 商店图标 128x128：`extension/icons/128.png`
 - 截图（1280x800）：你自己截的 1~2 张 + `screenshot-compare-1280x800.jpg`
 - 小宣传图 440x280：`promo-440x280.jpg`
 
-**官方网址 / 支持网址**：`https://github.com/Yangxiamao/bilidl`
+**官方网址 / 支持网址**：`https://github.com/Yangxiamao/bilifast`
 
 ## 隐私权（Privacy practices）
 
@@ -96,7 +96,7 @@ All code is bundled in the extension; no remote scripts are loaded or executed. 
 
 **隐私权政策网址**：合并进 main 以后填
 ```
-https://github.com/Yangxiamao/bilidl/blob/main/extension-play/store/PRIVACY.md
+https://github.com/Yangxiamao/bilifast/blob/main/extension/store/PRIVACY.md
 ```
 
 ## 分发（Distribution）

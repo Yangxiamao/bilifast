@@ -2,7 +2,7 @@
 //   - 把设置（开关、档位）从 chrome.storage 转给 page.js；只有弹出页能改设置，页面发来的事件一律不写 storage；
 //   - 弹出页要状态时向 page.js 要一份；
 //   - 状态有变化时让后台更新图标上的角标。
-const EV = "bilidl-play:";
+const EV = "bilifast:";
 const DEFAULTS = { playEnabled: true, playProfile: "mid" };
 let config = null;
 let seq = 0;
