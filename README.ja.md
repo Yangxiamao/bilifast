@@ -45,10 +45,6 @@ Chrome 111 以上が必要です。他サイトに埋め込まれたプレーヤ
 
 この拡張機能はオンライン再生を速くするだけで、動画のダウンロードはしません。mp4 で保存したい場合は、同じ作者の [bilidl](https://github.com/Yangxiamao/bilidl) を使ってください。2 つの拡張機能は同時に入れられます。
 
-## 類似プロジェクト
-
-[Bilibili 线程撕裂者](https://github.com/MrTangLuyao/Bilibili-thread-ripper)（ユーザースクリプト）も同じ考え方で、機能がより多く（8K、ドルビービジョン、ライブ配信、CDN のカスタマイズ）、中国大陸以外のユーザー向けに調整されています。bilifast は独自に実装した Chrome 拡張機能で、スクリプト管理ツールは不要、権限も 1 つだけです。
-
 ## 免責事項
 
 本プロジェクトは bilibili 公式とは関係ありません。[MIT License](LICENSE)

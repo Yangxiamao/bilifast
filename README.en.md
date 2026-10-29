@@ -45,10 +45,6 @@ Requires Chrome 111+. Players embedded on other sites and live streams are not a
 
 This extension only speeds up online playback; it doesn't download anything. To save videos as mp4, use [bilidl](https://github.com/Yangxiamao/bilidl) by the same author. Both extensions can be installed side by side.
 
-## Similar projects
-
-[Bilibili Thread Ripper](https://github.com/MrTangLuyao/Bilibili-thread-ripper) (a userscript) uses the same idea with more features (8K, Dolby Vision, live streams, custom CDNs) and is tuned for viewers outside mainland China. bilifast is an independent implementation as a Chrome extension: no userscript manager needed, and only one permission.
-
 ## Disclaimer
 
 This project is not affiliated with bilibili. [MIT License](LICENSE).
