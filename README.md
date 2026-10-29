@@ -45,6 +45,10 @@ B 站自己的播放器，锁定 4K，同一网络、同一视频（作者实测
 
 播放加速只管在线看，不下载视频。要把视频存成 mp4，请用同作者的 [bilidl](https://github.com/Yangxiamao/bilidl)，两个插件可以同时装。
 
+## 类似项目
+
+[Bilibili 线程撕裂者](https://github.com/MrTangLuyao/Bilibili-thread-ripper)（油猴脚本）用的是同样的思路，功能更多（8K、杜比视界、直播、自定义 CDN），专门针对海外用户。bilifast 是独立实现的 Chrome 插件，不需要脚本管理器，只申请一个权限。
+
 ## 声明
 
 本项目和 B 站官方无关。[MIT License](LICENSE)。
