@@ -8,14 +8,21 @@
 
 ## Install
 
+Get it from the **[Chrome Web Store](https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn)** (click **Add to Chrome**), then reload the bilibili video page and watch as usual. The store version updates itself.
+
+**Installed the zip before?** The store version and the zip version are separate extensions. Remove the old one in `chrome://extensions` before installing from the store (with both on, both take over the video requests). You'll need to pick the switch and preset again.
+
+<details>
+<summary>Can't reach the Chrome Web Store? Install the zip manually</summary>
+
 1. Download `bilifast-x.y.z.zip` from [Releases](https://github.com/Yangxiamao/bilifast/releases/latest).
 2. Unzip it into a permanent folder (don't delete or move it afterwards).
 3. In Chrome, open `chrome://extensions`, turn on **Developer mode** (top right), click **Load unpacked** and pick that folder.
 4. Reload the bilibili video page and watch as usual.
 
-A Chrome Web Store listing is under review; once it's approved you can install it from the store instead.
-
 **Update**: unzip the new version over the same folder, then click the reload button on the extension in `chrome://extensions`.
+
+</details>
 
 ## Results
 

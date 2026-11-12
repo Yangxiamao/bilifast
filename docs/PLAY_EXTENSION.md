@@ -15,7 +15,7 @@
 - 只需要 `storage` 权限，没有 host 权限，没有远程代码，适合上架 Chrome Web Store。
 
 ## 怎么装（开发版）
-普通用户从 Releases 下载打包好的 zip，见 [README](../README.md#安装)。从源代码装：
+普通用户从 Chrome 应用商店安装，见 [README](../README.md#安装)。从源代码装：
 
 1. `node tools/build_ext.mjs`，生成 `dist/bilifast/`（`--zip` 时另外打一个上架用的 zip）。
 2. Chrome 打开 `chrome://extensions`，打开「开发者模式」，「加载已解压的扩展程序」选 `dist/bilifast`。

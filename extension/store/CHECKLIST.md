@@ -44,5 +44,13 @@
 - 审核一般几天到一两周。被拒时邮件里会写具体的政策条款，改了再提交。
 
 ## 6. 上架以后
-- 把 README 里「从 Releases 下载 zip、加载已解压的扩展程序」那段换成商店链接（README 里已经留了位置）。
-- 已经用 zip 装的人，商店版是另一个插件 ID，需要卸掉旧的、从商店装新的，设置要重新选一次。
+2026-11-12 上架，商店页：<https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn>（插件 ID `jdmoabemimmjihndefdocpbgnpjmmhdn`）
+- ✅ README（中/英/日）的安装方式换成商店链接，zip 手动安装折叠成备选。
+- ✅ 已经用 zip 装的人：商店版是另一个插件 ID，README 里写了要先移除旧的、从商店装新的，设置要重新选一次。
+
+## 7. 以后发新版
+1. 把 `extension/manifest.json` 里的 `version` 调大。
+2. `node tools/build_ext.mjs --zip`，生成 `dist/bilifast-<版本>.zip`。
+3. 开发者后台 → 这个插件 →「软件包」→ 上传新软件包 → 提交审核。权限没变的话审核一般比第一次快。
+4. 同一个 zip 发到 GitHub Release（`gh release create v<版本> dist/bilifast-<版本>.zip`），保持两边版本号一致。
+5. 如果新增了权限，商店会让已安装的用户重新确认，listing.md 里「权限理由」也要补上。

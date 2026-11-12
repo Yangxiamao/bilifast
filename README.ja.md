@@ -8,14 +8,21 @@
 
 ## インストール
 
+**[Chrome ウェブストア](https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn)** で「Chrome に追加」を押し、bilibili の動画ページを再読み込みして、いつも通り視聴します。ストア版は自動で更新されます。
+
+**以前 zip でインストールした場合**：ストア版と zip 版は別の拡張機能です。`chrome://extensions` で古いほうを削除してからストア版を入れてください（両方オンだと両方が動画のリクエストを引き受けてしまいます）。オン/オフと段階は選び直しになります。
+
+<details>
+<summary>ウェブストアを開けない場合：zip を手動でインストール</summary>
+
 1. [Releases](https://github.com/Yangxiamao/bilifast/releases/latest) から `bilifast-x.y.z.zip` をダウンロードします。
 2. 決まったフォルダに展開します（あとで削除・移動しないでください）。
 3. Chrome で `chrome://extensions` を開き、右上の「デベロッパー モード」をオンにして「パッケージ化されていない拡張機能を読み込む」からそのフォルダを選びます。
 4. bilibili の動画ページを再読み込みし、いつも通り視聴します。
 
-Chrome ウェブストアに申請中です。公開後はストアから直接インストールできます。
-
 **更新**：新しい zip を同じフォルダに上書き展開し、`chrome://extensions` で拡張機能の再読み込みボタンを押します。
+
+</details>
 
 ## 効果
 

@@ -8,14 +8,21 @@
 
 ## 安装
 
+到 **[Chrome 应用商店](https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn)** 点「添加至 Chrome」，然后刷新 B 站视频页，照常看视频。商店版会自动更新。
+
+**之前用 zip 装过的**：商店版和 zip 版是两个不同的插件，请先在 `chrome://extensions` 移除旧的再从商店安装（两个同时开会重复接管视频请求）。开关和档位要重新选一次。
+
+<details>
+<summary>打不开应用商店时：手动安装 zip</summary>
+
 1. 到 [Releases](https://github.com/Yangxiamao/bilifast/releases/latest) 下载 `bilifast-x.y.z.zip`。
 2. 解压到一个固定的文件夹（之后不要删除或移动它）。
 3. Chrome 打开 `chrome://extensions`，打开右上角的「开发者模式」，点「加载已解压的扩展程序」，选这个文件夹。
 4. 刷新 B 站视频页，照常看视频。
 
-正在申请上架 Chrome 应用商店，上架后可以直接从商店安装。
-
 **更新**：新版 zip 解压覆盖到同一个文件夹，在 `chrome://extensions` 点插件上的刷新按钮。
+
+</details>
 
 ## 效果
 
