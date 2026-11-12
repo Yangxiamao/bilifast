@@ -2,7 +2,7 @@
 
 [中文](README.md) | [English](README.en.md) | **日本語**
 
-**bilibili（ビリビリ動画）の Web プレーヤーで 4K・倍速再生・シークしても読み込みで止まらなくする Chrome 拡張機能です。** 拡張機能を入れるだけで、Python などのプログラムは不要。データは一切収集しません。
+**bilibili（ビリビリ動画）の Web プレーヤーで 4K・倍速再生・シークしても読み込みで止まらなくする Chrome 拡張機能です。** 拡張機能を入れるだけで、Python などのプログラムは不要。データは一切収集しません。紹介ページ（英語）：[yangxiaomao.com/bilifast/en](https://yangxiaomao.com/bilifast/en/)
 
 <p align="center"><img src="docs/images/popup.png" alt="拡張機能のポップアップ：オン/オフ、低・中・高の 3 段階、現在のタブで再生位置より先に読み込んでいる秒数、速度、映像と音声に使っているノード、各ノードの実測速度" width="360"></p>
 

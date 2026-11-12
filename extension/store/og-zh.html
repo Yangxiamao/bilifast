@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<!-- 介绍页的分享卡片（og:image，1200x630），中文。由 tools/make_icons.mjs 渲染成 site/og-zh.png；配色同 promo.html -->
+<style>
+  body { margin: 0; width: 1200px; height: 630px; overflow: hidden; color: #fff;
+         background: radial-gradient(circle at 85% 12%, #3a2a2e 0, #1d1f24 60%);
+         font-family: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Segoe UI", system-ui, sans-serif; }
+  .box { display: flex; flex-direction: column; justify-content: center; height: 100%; padding: 0 88px; box-sizing: border-box; }
+  .top { display: flex; align-items: center; gap: 22px; }
+  .top img { width: 112px; height: 112px; margin: -14px; }
+  .top b { font-size: 40px; }
+  h1 { margin: 40px 0 0; font-size: 64px; line-height: 1.22; font-weight: 700; }
+  .cmp { margin-top: 40px; display: grid; gap: 12px; width: 820px; }
+  .cmp small { font-size: 22px; color: #c3c7cf; }
+  .bar { display: flex; align-items: center; gap: 16px; font-size: 24px; }
+  .bar i { height: 22px; border-radius: 0 6px 6px 0; display: block; }
+  .note { margin-top: 40px; font-size: 24px; color: #ffb35c; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="top"><img src="icon.svg" alt=""><b>bilifast 播放加速</b></div>
+  <h1>B站 4K · 倍速 · 拖进度，<br>不再卡顿转圈</h1>
+  <div class="cmp">
+    <small>切到 2 倍速 30 秒</small>
+    <div class="bar"><i style="width:240px;background:#7ea2e0"></i>不装插件：卡 4 次，共 10.2 秒</div>
+    <div class="bar"><i style="width:6px;background:#ff7a45"></i>装了 bilifast：不卡</div>
+  </div>
+  <p class="note">免费 · 开源 · 不收集任何数据 · Chrome 插件</p>
+</div>
+</body>
+</html>

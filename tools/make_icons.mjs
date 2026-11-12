@@ -2,6 +2,7 @@
 //   extension/icons/16|32|48|128.png：16、32 用简化版 icon-16.svg；48 裁掉四周的透明边，在扩展管理页上显得大一些；
 //                                       128 保留 16px 透明边（商店的要求）
 //   extension/store/promo-440x280.jpg、screenshot-compare-1280x800.jpg：商店要求不带透明通道，所以用 jpg
+//   site/og-zh.png、og-en.png：介绍页的分享卡片（1200x630）
 // 用法: node tools/make_icons.mjs   （改了 store/ 里的源文件后重新运行，生成的图片一起提交）
 import fs from "node:fs";
 import os from "node:os";
@@ -22,6 +23,9 @@ const JOBS = [
   ["icon.svg", path.join(ICONS, "128.png"), 128, 128, null],
   ["promo.html", path.join(STORE, "promo-440x280.jpg"), 440, 280, null],
   ["compare.html", path.join(STORE, "screenshot-compare-1280x800.jpg"), 1280, 800, null],
+  // 介绍页（site/）的分享卡片，og:image 要 1200x630
+  ["og-zh.html", path.join(ROOT, "site", "og-zh.png"), 1200, 630, null],
+  ["og-en.html", path.join(ROOT, "site", "og-en.png"), 1200, 630, null],
 ];
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "bilifast-icons-"));

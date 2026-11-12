@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B站卡顿、倍速卡、4K 转圈怎么办？bilifast 播放加速插件（免费 Chrome 扩展）</title>
+<meta name="description" content="B站（bilibili / 哔哩哔哩）网页看 4K、开 2 倍速、拖进度总是卡顿转圈？bilifast 是一个免费开源的 Chrome 插件，从多个B站视频节点并发预读，实测 2 倍速、3 倍速不再卡。只要 storage 权限，不收集任何数据。">
+<link rel="canonical" href="https://yangxiaomao.com/bilifast/">
+<link rel="alternate" hreflang="zh-CN" href="https://yangxiaomao.com/bilifast/">
+<link rel="alternate" hreflang="en" href="https://yangxiaomao.com/bilifast/en/">
+<link rel="alternate" hreflang="x-default" href="https://yangxiaomao.com/bilifast/">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-32.png" sizes="32x32" type="image/png">
+<link rel="stylesheet" href="style.css">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f0612e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="bilifast 播放加速">
+<meta property="og:title" content="B站卡顿、倍速转圈？bilifast 播放加速插件">
+<meta property="og:description" content="免费开源的 Chrome 插件：B站网页看 4K、开倍速、拖进度不再卡。不收集任何数据。">
+<meta property="og:url" content="https://yangxiaomao.com/bilifast/">
+<meta property="og:image" content="https://yangxiaomao.com/bilifast/og-zh.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "bilifast 播放加速",
+  "alternateName": "bilifast",
+  "description": "让B站（bilibili / 哔哩哔哩）网页播放器看 4K、开倍速、拖进度不再卡顿的 Chrome 插件：从多个B站视频节点并发预读。",
+  "url": "https://yangxiaomao.com/bilifast/",
+  "downloadUrl": "https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn",
+  "installUrl": "https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn",
+  "image": "https://yangxiaomao.com/bilifast/og-zh.png",
+  "screenshot": "https://yangxiaomao.com/bilifast/popup.png",
+  "applicationCategory": "BrowserApplication",
+  "operatingSystem": "Chrome 111+",
+  "softwareVersion": "__VERSION__",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Yangxiamao", "url": "https://github.com/Yangxiamao" },
+  "sameAs": ["https://github.com/Yangxiamao/bilifast"],
+  "inLanguage": "zh-CN"
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><img src="icon.svg" alt="" width="40" height="40">bilifast 播放加速</a>
+    <nav>
+      <a href="#faq">常见问题</a>
+      <a href="https://github.com/Yangxiamao/bilifast">GitHub</a>
+      <a href="en/" hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>B站卡顿、倍速转圈？<br><em>4K、2 倍速、拖进度</em>不再卡</h1>
+        <p class="lead">bilifast 是一个免费开源的 Chrome 插件。在B站（bilibili / 哔哩哔哩）网页上看视频时，它从多个B站视频节点同时拉取、提前预读，播放器就不会再因为缓冲不够而转圈。</p>
+        <div class="cta">
+          <a class="btn primary" href="https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
+            从 Chrome 应用商店安装（免费）
+          </a>
+          <a class="btn" href="https://github.com/Yangxiamao/bilifast">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5"/></svg>
+            GitHub 源代码
+          </a>
+        </div>
+        <ul class="facts">
+          <li>只装插件，不用装其他程序</li>
+          <li>不收集任何数据</li>
+          <li>开源（MIT）</li>
+        </ul>
+      </div>
+      <figure class="shot">
+        <img src="popup.png" width="640" height="886" alt="插件的弹出页：加速开关、低/中/高三档、当前标签页领先播放位置的秒数、速度、视频和音频用的节点、各节点实测速度">
+        <figcaption>点工具栏图标打开的弹出页</figcaption>
+      </figure>
+    </div>
+
+    <section id="results" aria-labelledby="results-h">
+      <h2 id="results-h">实测：同一个 4K 视频，装与不装</h2>
+      <p class="sub">B站自己的播放器，锁定 4K，同一网络、同一视频，按顺序 1 倍速 → 2 倍速 → 跳到 60% → 3 倍速。条越短越好。</p>
+      <div class="legend" aria-hidden="true">
+        <span><i style="background:var(--direct)"></i>不装插件（直连）</span>
+        <span><i style="background:var(--ext)"></i>装了 bilifast</span>
+      </div>
+      <!-- 数据来自 docs/PLAY_EXTENSION.md 的「结论」和 extension/store/compare.html；条的宽度 = 卡顿秒数 / 30 秒 -->
+      <div class="chart" role="table" aria-label="各阶段的卡顿时间">
+        <div class="row" role="row">
+          <div class="phase" role="rowheader">1 倍速<small>25 秒</small></div>
+          <div class="bars" role="cell">
+            <div class="bar d"><div class="track"><b style="width:0"></b></div><span>不卡，但缓冲最少只剩 3 秒</span></div>
+            <div class="bar e"><div class="track"><b style="width:0"></b></div><span>不卡，缓冲 ≥ 32 秒</span></div>
+          </div>
+        </div>
+        <div class="row" role="row">
+          <div class="phase" role="rowheader">切到 2 倍速<small>30 秒</small></div>
+          <div class="bars" role="cell">
+            <div class="bar d"><div class="track"><b style="width:34%"></b></div><span>卡 4 次，共 10.2 秒</span></div>
+            <div class="bar e"><div class="track"><b style="width:0"></b></div><span>不卡，缓冲 ≥ 70 秒</span></div>
+          </div>
+        </div>
+        <div class="row" role="row">
+          <div class="phase" role="rowheader">跳到 60% 后 2 倍速<small>25 秒</small></div>
+          <div class="bars" role="cell">
+            <div class="bar d"><div class="track"><b style="width:83%"></b></div><span>一直卡住，25 秒里只播了 1 秒</span></div>
+            <div class="bar e"><div class="track"><b style="width:1.3%"></b></div><span>卡 1 次，0.4 秒</span></div>
+          </div>
+        </div>
+        <div class="row" role="row">
+          <div class="phase" role="rowheader">切到 3 倍速<small>25 秒</small></div>
+          <div class="bars" role="cell">
+            <div class="bar d"><div class="track"><b style="width:83%"></b></div><span>一直卡住</span></div>
+            <div class="bar e"><div class="track"><b style="width:0"></b></div><span>不卡，缓冲 ≥ 69 秒</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="note">作者 2026-10-29 实测：日本的家庭网络，登录账号，BV1bE41127s6（4K 2880×2160），Chrome 156，插件用默认的中档。不同网络、不同时间的结果会不一样；网络本来就很快的话，提升不明显。</p>
+    </section>
+
+    <section id="how" aria-labelledby="how-h">
+      <h2 id="how-h">为什么会卡，插件做了什么</h2>
+      <p class="sub">B站的视频 CDN 对<strong>每个请求单独限速</strong>，而网页播放器一次只发一个请求。看 4K、高码率或者开倍速时，播放器需要的速度超过了一个请求能拿到的速度，缓冲用完就开始转圈。</p>
+      <div class="how">
+        <div class="panel">
+          <h3>不装插件</h3>
+          <p>一次一个请求，跑不满你的网速。</p>
+          <svg class="diagram" viewBox="0 0 420 130" role="img" aria-label="B站播放器一次只向B站视频 CDN 发一个请求，每个请求单独限速">
+            <rect class="box" x="6" y="40" width="112" height="50" rx="10"/>
+            <text class="label" x="62" y="70" text-anchor="middle">B站播放器</text>
+            <rect class="box" x="302" y="40" width="112" height="50" rx="10"/>
+            <text class="label" x="358" y="70" text-anchor="middle">B站视频 CDN</text>
+            <line class="slow" x1="126" y1="65" x2="294" y2="65" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 9"/>
+            <text x="210" y="50" text-anchor="middle">一次只发一个请求</text>
+            <text x="210" y="90" text-anchor="middle">每个请求单独限速</text>
+          </svg>
+        </div>
+        <div class="panel">
+          <h3>装了 bilifast</h3>
+          <p>拆成 1 MB 小块，从实测最快的几个节点同时拉取，提前预读约 90 秒，倍速时自动多读。</p>
+          <svg class="diagram" viewBox="0 0 420 130" role="img" aria-label="插件把请求拆成小块，同时从三个B站视频节点并发拉取">
+            <rect class="box" x="6" y="40" width="112" height="50" rx="10"/>
+            <text class="label" x="62" y="70" text-anchor="middle">播放器 + 插件</text>
+            <rect class="box" x="302" y="4" width="112" height="34" rx="9"/>
+            <text class="label" x="358" y="26" text-anchor="middle">节点 A</text>
+            <rect class="box" x="302" y="48" width="112" height="34" rx="9"/>
+            <text class="label" x="358" y="70" text-anchor="middle">节点 B</text>
+            <rect class="box" x="302" y="92" width="112" height="34" rx="9"/>
+            <text class="label" x="358" y="114" text-anchor="middle">节点 C</text>
+            <g class="fast" stroke-width="4" stroke-linecap="round">
+              <line x1="126" y1="58" x2="294" y2="21"/>
+              <line x1="126" y1="65" x2="294" y2="65"/>
+              <line x1="126" y1="72" x2="294" y2="109"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <p class="note">画面、弹幕、评论、清晰度切换、播放记录都还是B站自己的，用法和平时完全一样。插件出错时自动退回直连，视频照常播放。技术细节见 <a href="https://github.com/Yangxiamao/bilifast/blob/main/docs/PLAY_EXTENSION.md">PLAY_EXTENSION.md</a>。</p>
+    </section>
+
+    <section id="usage" aria-labelledby="usage-h">
+      <h2 id="usage-h">怎么用</h2>
+      <p class="sub">支持 www.bilibili.com 的视频页、列表页、番剧页，切换分 P、清晰度、自动连播都会自动接管。需要 Chrome 111 以上。</p>
+      <ol class="steps">
+        <li><h3>安装</h3><p>到 <a href="https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn">Chrome 应用商店</a>点「添加至 Chrome」。商店版会自动更新。</p></li>
+        <li><h3>刷新视频页</h3><p>打开或刷新B站视频页，照常看就行，不用做任何设置。</p></li>
+        <li><h3>需要时调档位</h3><p>点工具栏图标可以开关加速、选低 / 中 / 高三档。图标上的数字是缓冲领先播放位置的秒数。</p></li>
+      </ol>
+    </section>
+
+    <!--
+      视频讲解：视频发布后把 BVxxxxxxxxxx 换成真实的 BV 号，去掉这段注释的首尾，放回页面里。
+    <section id="video" aria-labelledby="video-h">
+      <h2 id="video-h">视频讲解：为什么最近B站这么卡</h2>
+      <div style="position:relative;aspect-ratio:16/9">
+        <iframe src="https://player.bilibili.com/player.html?bvid=BVxxxxxxxxxx&autoplay=0" title="为什么最近B站这么卡" style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:14px" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
+    -->
+
+    <section id="privacy" aria-labelledby="privacy-h">
+      <h2 id="privacy-h">隐私</h2>
+      <div class="plain">
+        <ul>
+          <li>只申请 <code>storage</code> 一个权限，用来在本机记住开关和档位。</li>
+          <li>不读 cookie，不收集、不上传任何数据，没有统计和广告。</li>
+          <li>只在B站的视频页、列表页、番剧页上运行。</li>
+          <li>视频数据只在你的浏览器和B站的视频服务器之间传输。</li>
+        </ul>
+        <p>完整说明见 <a href="https://github.com/Yangxiamao/bilifast/blob/main/extension/store/PRIVACY.md">隐私说明</a>。代码全部开源，可以自己检查。</p>
+      </div>
+    </section>
+
+    <section id="faq" class="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">常见问题</h2>
+      <h3>为什么B站网页版看视频这么卡？</h3>
+      <p>常见的原因是：B站视频 CDN 对每个请求单独限速，而网页播放器一次只发一个请求。4K、高码率、倍速播放需要的速度超过一个请求能拿到的速度，缓冲耗尽后就会转圈。你自己的网络慢、晚高峰拥堵也会卡，这种情况插件能帮的有限。作者正在录一期视频详细分析，做好后会放在这里。</p>
+      <h3>安全吗？要哪些权限？</h3>
+      <p>只申请 <code>storage</code> 一个权限，没有访问网站数据的权限。插件只在B站视频、列表、番剧页上运行，不加载远程代码，源代码在 GitHub 上公开。</p>
+      <h3>会影响我的B站账号吗？</h3>
+      <p>插件不读 cookie，不碰登录、评论、播放记录这些请求。它只是把播放器本来就要下载的视频分段，改成从B站自己的视频服务器分块并发下载，请求的是同样的视频地址。</p>
+      <h3>支持 Edge 或其他浏览器吗？</h3>
+      <p>目前只在 Chrome 111 以上测试过。Edge 等基于 Chromium 的浏览器可以从 Chrome 应用商店安装扩展，但作者还没有测试过；Firefox 和 Safari 不支持。</p>
+      <h3>能下载B站视频吗？</h3>
+      <p>不能，这个插件只加速在线播放。要把视频存成 mp4，可以用同作者的 <a href="https://github.com/Yangxiamao/bilidl">bilidl</a>，两个插件可以同时装。</p>
+      <h3>直播、嵌入在其他网站的B站播放器能加速吗？</h3>
+      <p>不能，只加速 www.bilibili.com 上的视频页、列表页和番剧页。</p>
+      <h3>能看大会员或付费视频吗？</h3>
+      <p>不能。大会员、付费内容的限制不变，本来看不了的视频装了插件也看不了。</p>
+      <h3>网速本来就很快，还需要装吗？</h3>
+      <p>提升可能不明显。可以先装上试试，不需要时在弹出页里随时关闭，关闭后和没装一样。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>bilifast 是个人开发的开源项目，和B站（bilibili）官方无关。<a href="https://github.com/Yangxiamao/bilifast/blob/main/LICENSE">MIT License</a></p>
+    <p><a href="https://github.com/Yangxiamao/bilifast">GitHub</a> · <a href="https://github.com/Yangxiamao/bilifast/issues">问题反馈</a> · <a href="en/" hreflang="en" lang="en">English</a></p>
+  </footer>
+</div>
+</body>
+</html>

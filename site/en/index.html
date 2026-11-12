@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bilifast – Fix bilibili buffering on 4K and 2x speed (free Chrome extension)</title>
+<meta name="description" content="Does bilibili keep buffering when you watch in 4K, switch to 2x speed or seek? bilifast is a free, open-source Chrome extension that prefetches from several bilibili CDN nodes in parallel, so playback stops stalling. Only the storage permission, no data collected.">
+<link rel="canonical" href="https://yangxiaomao.com/bilifast/en/">
+<link rel="alternate" hreflang="zh-CN" href="https://yangxiaomao.com/bilifast/">
+<link rel="alternate" hreflang="en" href="https://yangxiaomao.com/bilifast/en/">
+<link rel="alternate" hreflang="x-default" href="https://yangxiaomao.com/bilifast/">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="icon" href="../icon-32.png" sizes="32x32" type="image/png">
+<link rel="stylesheet" href="../style.css">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f0612e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="bilifast">
+<meta property="og:title" content="bilifast – Stop bilibili buffering on 4K and 2x speed">
+<meta property="og:description" content="A free, open-source Chrome extension that stops the bilibili web player from stalling on 4K, fast playback speeds and seeking. No data collected.">
+<meta property="og:url" content="https://yangxiaomao.com/bilifast/en/">
+<meta property="og:image" content="https://yangxiaomao.com/bilifast/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "bilifast",
+  "alternateName": "bilifast 播放加速",
+  "description": "A Chrome extension that stops the bilibili web player from stalling on 4K, fast playback speeds and seeking by prefetching from several bilibili CDN nodes in parallel.",
+  "url": "https://yangxiaomao.com/bilifast/en/",
+  "downloadUrl": "https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn?hl=en",
+  "installUrl": "https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn?hl=en",
+  "image": "https://yangxiaomao.com/bilifast/og-en.png",
+  "screenshot": "https://yangxiaomao.com/bilifast/popup.png",
+  "applicationCategory": "BrowserApplication",
+  "operatingSystem": "Chrome 111+",
+  "softwareVersion": "__VERSION__",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Yangxiamao", "url": "https://github.com/Yangxiamao" },
+  "sameAs": ["https://github.com/Yangxiamao/bilifast"],
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><img src="../icon.svg" alt="" width="40" height="40">bilifast</a>
+    <nav>
+      <a href="#faq">FAQ</a>
+      <a href="https://github.com/Yangxiamao/bilifast">GitHub</a>
+      <a href="../" hreflang="zh-CN" lang="zh-CN">中文</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>bilibili keeps buffering?<br>Watch in <em>4K, at 2x, and seek</em> without stalls</h1>
+        <p class="lead">bilifast is a free, open-source Chrome extension. While you watch on bilibili.com, it fetches video from several bilibili CDN nodes at once and reads ahead, so the player no longer runs out of buffer and spins.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn?hl=en">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
+            Add to Chrome (free)
+          </a>
+          <a class="btn" href="https://github.com/Yangxiamao/bilifast">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5"/></svg>
+            Source on GitHub
+          </a>
+        </div>
+        <ul class="facts">
+          <li>Just the extension, nothing else to install</li>
+          <li>No data collected</li>
+          <li>Open source (MIT)</li>
+        </ul>
+      </div>
+      <figure class="shot">
+        <img src="../popup.png" width="640" height="886" alt="The extension popup: on/off switch, low/medium/high presets, seconds buffered ahead in the current tab, speed, the CDN nodes used for video and audio, and the measured speed of each node">
+        <figcaption>The popup from the toolbar icon (its interface is in Chinese)</figcaption>
+      </figure>
+    </div>
+
+    <section id="results" aria-labelledby="results-h">
+      <h2 id="results-h">Tested: the same 4K video, with and without</h2>
+      <p class="sub">bilibili's own player locked to 4K, same network, same video, in order: 1x → 2x → seek to 60% → 3x. Shorter bars are better.</p>
+      <div class="legend" aria-hidden="true">
+        <span><i style="background:var(--direct)"></i>Without the extension</span>
+        <span><i style="background:var(--ext)"></i>With bilifast</span>
+      </div>
+      <!-- Data from docs/PLAY_EXTENSION.md and extension/store/compare.html; bar width = seconds stalled / 30 s -->
+      <div class="chart" role="table" aria-label="Seconds stalled in each phase">
+        <div class="row" role="row">
+          <div class="phase" role="rowheader">1x speed<small>25 s</small></div>
+          <div class="bars" role="cell">
+            <div class="bar d"><div class="track"><b style="width:0"></b></div><span>No stalls, but buffer fell to 3 s</span></div>
+            <div class="bar e"><div class="track"><b style="width:0"></b></div><span>No stalls, ≥ 32 s buffered</span></div>
+          </div>
+        </div>
+        <div class="row" role="row">
+          <div class="phase" role="rowheader">Switch to 2x<small>30 s</small></div>
+          <div class="bars" role="cell">
+            <div class="bar d"><div class="track"><b style="width:34%"></b></div><span>4 stalls, 10.2 s total</span></div>
+            <div class="bar e"><div class="track"><b style="width:0"></b></div><span>No stalls, ≥ 70 s buffered</span></div>
+          </div>
+        </div>
+        <div class="row" role="row">
+          <div class="phase" role="rowheader">Seek to 60%, 2x<small>25 s</small></div>
+          <div class="bars" role="cell">
+            <div class="bar d"><div class="track"><b style="width:83%"></b></div><span>Stuck: played 1 s out of 25</span></div>
+            <div class="bar e"><div class="track"><b style="width:1.3%"></b></div><span>1 stall, 0.4 s</span></div>
+          </div>
+        </div>
+        <div class="row" role="row">
+          <div class="phase" role="rowheader">Switch to 3x<small>25 s</small></div>
+          <div class="bars" role="cell">
+            <div class="bar d"><div class="track"><b style="width:83%"></b></div><span>Stuck the whole time</span></div>
+            <div class="bar e"><div class="track"><b style="width:0"></b></div><span>No stalls, ≥ 69 s buffered</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="note">Author's test on 2026-10-29: home connection in Japan, logged in, BV1bE41127s6 (4K 2880×2160), Chrome 156, default medium preset. Results vary by network and time of day; if your connection is already fast you may not notice much.</p>
+    </section>
+
+    <section id="how" aria-labelledby="how-h">
+      <h2 id="how-h">Why it stalls, and what the extension does</h2>
+      <p class="sub">bilibili's video CDN <strong>throttles every request separately</strong>, and the web player sends only one request at a time. In 4K, at high bitrates or at fast speeds the player needs more than one request can deliver, so the buffer runs dry and it starts spinning.</p>
+      <div class="how">
+        <div class="panel">
+          <h3>Without bilifast</h3>
+          <p>One request at a time, never filling your bandwidth.</p>
+          <svg class="diagram" viewBox="0 0 420 130" role="img" aria-label="The bilibili player sends one request at a time to the bilibili CDN, and each request is throttled">
+            <rect class="box" x="6" y="40" width="112" height="50" rx="10"/>
+            <text class="label" x="62" y="70" text-anchor="middle">bilibili player</text>
+            <rect class="box" x="302" y="40" width="112" height="50" rx="10"/>
+            <text class="label" x="358" y="70" text-anchor="middle">bilibili CDN</text>
+            <line class="slow" x1="126" y1="65" x2="294" y2="65" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 9"/>
+            <text x="210" y="50" text-anchor="middle">one request at a time</text>
+            <text x="210" y="90" text-anchor="middle">each one throttled</text>
+          </svg>
+        </div>
+        <div class="panel">
+          <h3>With bilifast</h3>
+          <p>Splits requests into 1 MB chunks, fetches them in parallel from the fastest nodes it measures, and reads about 90 s ahead (more at faster speeds).</p>
+          <svg class="diagram" viewBox="0 0 420 130" role="img" aria-label="The extension splits requests into chunks and fetches them in parallel from three bilibili CDN nodes">
+            <rect class="box" x="6" y="40" width="112" height="50" rx="10"/>
+            <text class="label" x="62" y="70" text-anchor="middle">player + bilifast</text>
+            <rect class="box" x="302" y="4" width="112" height="34" rx="9"/>
+            <text class="label" x="358" y="26" text-anchor="middle">node A</text>
+            <rect class="box" x="302" y="48" width="112" height="34" rx="9"/>
+            <text class="label" x="358" y="70" text-anchor="middle">node B</text>
+            <rect class="box" x="302" y="92" width="112" height="34" rx="9"/>
+            <text class="label" x="358" y="114" text-anchor="middle">node C</text>
+            <g class="fast" stroke-width="4" stroke-linecap="round">
+              <line x1="126" y1="58" x2="294" y2="21"/>
+              <line x1="126" y1="65" x2="294" y2="65"/>
+              <line x1="126" y1="72" x2="294" y2="109"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <p class="note">The video, danmaku, comments, quality switching and watch history are all still bilibili's own; you watch exactly as before. If anything goes wrong it falls back to a direct connection and the video keeps playing. Technical details (in Chinese): <a href="https://github.com/Yangxiamao/bilifast/blob/main/docs/PLAY_EXTENSION.md">PLAY_EXTENSION.md</a>.</p>
+    </section>
+
+    <section id="usage" aria-labelledby="usage-h">
+      <h2 id="usage-h">How to use it</h2>
+      <p class="sub">Works on video, list and bangumi pages on www.bilibili.com, including switching parts, switching quality and autoplay. Requires Chrome 111 or later.</p>
+      <ol class="steps">
+        <li><h3>Install</h3><p>Click <strong>Add to Chrome</strong> on the <a href="https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn?hl=en">Chrome Web Store</a>. It updates itself.</p></li>
+        <li><h3>Reload the video page</h3><p>Open or reload a bilibili video page and watch as usual. Nothing to set up.</p></li>
+        <li><h3>Adjust if you like</h3><p>Click the toolbar icon to turn it on or off and pick low / medium / high. The number on the icon is seconds buffered ahead.</p></li>
+      </ol>
+    </section>
+
+    <section id="privacy" aria-labelledby="privacy-h">
+      <h2 id="privacy-h">Privacy</h2>
+      <div class="plain">
+        <ul>
+          <li>The only permission is <code>storage</code>, to remember the switch and preset on your computer.</li>
+          <li>Doesn't read cookies; collects and uploads no data; no analytics, no ads.</li>
+          <li>Runs only on bilibili video, list and bangumi pages.</li>
+          <li>Video data goes only between your browser and bilibili's video servers.</li>
+        </ul>
+        <p>Full details in the <a href="https://github.com/Yangxiamao/bilifast/blob/main/extension/store/PRIVACY.md">privacy policy</a>. All the code is open source, so you can check it yourself.</p>
+      </div>
+    </section>
+
+    <section id="faq" class="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">FAQ</h2>
+      <h3>Why does bilibili keep buffering in the browser?</h3>
+      <p>A common cause: bilibili's video CDN throttles each request separately, and the web player sends one request at a time. 4K, high bitrates and fast playback speeds need more than one request can deliver, so the buffer runs out and the player spins. A slow connection or evening congestion on your side also causes stalls, and the extension can do less about those.</p>
+      <h3>Is it safe? What permissions does it need?</h3>
+      <p>Only <code>storage</code>, and no access to site data. It runs only on bilibili video, list and bangumi pages, loads no remote code, and the source is public on GitHub.</p>
+      <h3>Will it affect my bilibili account?</h3>
+      <p>It doesn't read cookies or touch login, comment or watch-history requests. It only downloads the video segments the player was going to download anyway, in parallel chunks from bilibili's own video servers, using the same video URLs.</p>
+      <h3>Does it work in Edge or other browsers?</h3>
+      <p>It has only been tested in Chrome 111 and later. Edge and other Chromium-based browsers can install extensions from the Chrome Web Store, but the author hasn't tested them yet. Firefox and Safari are not supported.</p>
+      <h3>Can it download bilibili videos?</h3>
+      <p>No, it only speeds up online playback. To save videos as mp4, try <a href="https://github.com/Yangxiamao/bilidl">bilidl</a> by the same author; both can be installed side by side.</p>
+      <h3>Does it speed up live streams or bilibili players embedded on other sites?</h3>
+      <p>No, only video, list and bangumi pages on www.bilibili.com.</p>
+      <h3>Can I watch premium or paid videos with it?</h3>
+      <p>No. Premium and paid content restrictions are unchanged; anything you couldn't watch before, you still can't.</p>
+      <h3>My connection is already fast. Do I need it?</h3>
+      <p>You may not notice much difference. Try it, and turn it off from the popup any time; when off, it's as if it weren't installed.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>bilifast is an independent open-source project, not affiliated with bilibili. <a href="https://github.com/Yangxiamao/bilifast/blob/main/LICENSE">MIT License</a></p>
+    <p><a href="https://github.com/Yangxiamao/bilifast">GitHub</a> · <a href="https://github.com/Yangxiamao/bilifast/issues">Issues</a> · <a href="../" hreflang="zh-CN" lang="zh-CN">中文</a></p>
+  </footer>
+</div>
+</body>
+</html>

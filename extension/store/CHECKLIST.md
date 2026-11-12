@@ -47,6 +47,7 @@
 2026-11-12 上架，商店页：<https://chromewebstore.google.com/detail/bilifast-%E6%92%AD%E6%94%BE%E5%8A%A0%E9%80%9F/jdmoabemimmjihndefdocpbgnpjmmhdn>（插件 ID `jdmoabemimmjihndefdocpbgnpjmmhdn`）
 - ✅ README（中/英/日）的安装方式换成商店链接，zip 手动安装折叠成备选。
 - ✅ 已经用 zip 装的人：商店版是另一个插件 ID，README 里写了要先移除旧的、从商店装新的，设置要重新选一次。
+- ✅ 介绍页 <https://yangxiaomao.com/bilifast/>（中文）和 `/bilifast/en/`（英文）：源文件在 `site/`，`node tools/build_site.mjs` 生成 `dist/site/`，推到 main 后由 `.github/workflows/pages.yml` 自动部署。分享卡片 `site/og-*.png` 由 `node tools/make_icons.mjs` 生成。改了 manifest 的版本号也会重新部署（页面的结构化数据里有版本号）。
 
 ## 7. 以后发新版
 1. 把 `extension/manifest.json` 里的 `version` 调大。

@@ -2,7 +2,7 @@
 
 **中文** | [English](README.en.md) | [日本語](README.ja.md)
 
-**一个 Chrome 插件，让 B 站（bilibili / 哔哩哔哩）网页看 4K、开倍速、拖进度不再卡顿转圈。** 只装插件就行，不用装 Python 或其他程序，不收集任何数据。
+**一个 Chrome 插件，让 B 站（bilibili / 哔哩哔哩）网页看 4K、开倍速、拖进度不再卡顿转圈。** 只装插件就行，不用装 Python 或其他程序，不收集任何数据。介绍页：[yangxiaomao.com/bilifast](https://yangxiaomao.com/bilifast/)
 
 <p align="center"><img src="docs/images/popup.png" alt="插件的弹出页：加速开关、低/中/高三档，当前标签页领先播放位置的秒数、速度、视频和音频用的节点、各节点实测速度" width="360"></p>
 

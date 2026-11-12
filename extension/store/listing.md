@@ -58,7 +58,9 @@ bilifast 播放加速
 - 截图（1280x800）：你自己截的 1~2 张 + `screenshot-compare-1280x800.jpg`
 - 小宣传图 440x280：`promo-440x280.jpg`
 
-**官方网址 / 支持网址**：`https://github.com/Yangxiamao/bilifast`
+**官方网址**：介绍页 `https://yangxiaomao.com/bilifast/`（源代码在 `site/`，由 `.github/workflows/pages.yml` 部署）
+
+**支持网址**：`https://github.com/Yangxiamao/bilifast/issues`
 
 ### 其他语言的详细说明
 有了 `_locales/en`、`_locales/ja` 以后，后台「商品详情」顶部的语言下拉框里可以选 English、日本語，分别填下面的说明（截图可以共用）。
