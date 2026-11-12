@@ -2,7 +2,7 @@
 
 [中文](README.md) | **English** | [日本語](README.ja.md)
 
-**A Chrome extension that stops bilibili's web player from stalling on 4K, fast playback speeds and seeking.** Just the extension: no Python or other programs to install, and no data collected.
+**A Chrome extension that stops the bilibili (B站, 哔哩哔哩) web player from stalling and buffering on 4K, 2x/3x playback speed and seeking.** Just the extension: no Python or other programs to install, and no data collected.
 
 <p align="center"><img src="docs/images/popup.png" alt="The extension popup: on/off switch, low/medium/high presets, seconds buffered ahead in the current tab, speed, the CDN nodes used for video and audio, and measured speed of each node" width="360"></p>
 

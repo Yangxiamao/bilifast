@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "bilifast 播放加速"
+  },
+  "extDescription": {
+    "message": "Stop bilibili video stalls on 4K, 2x/3x speed and seeking: parallel prefetch from bilibili's CDN. No extra apps, no data collected."
+  }
+}

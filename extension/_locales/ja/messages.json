@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "bilifast 播放加速"
+  },
+  "extDescription": {
+    "message": "bilibili（ビリビリ動画）の4K・倍速再生・シークで止まる問題を解消。複数のCDNノードから並列で先読み。追加ソフト不要、データ収集なし。"
+  }
+}

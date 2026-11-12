@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "bilifast 播放加速"
+  },
+  "extDescription": {
+    "message": "B站（bilibili/哔哩哔哩）网页看4K、开倍速、拖进度不再卡顿转圈：多节点并发预读视频。只装插件，不收集任何数据。"
+  }
+}

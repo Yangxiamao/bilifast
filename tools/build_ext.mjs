@@ -12,7 +12,7 @@ const SRC = path.join(ROOT, "extension");
 const OUT = path.join(ROOT, "dist", "bilifast");
 // page.js 的组成，按依赖顺序（每个文件里的 import 去掉、export 关键字去掉，合进同一个作用域）
 const PAGE = ["shared/hosts.js", "extension/src/engine.js", "extension/src/hook.js"];
-const COPY = ["manifest.json", "bridge.js", "background.js", "popup.html", "icons"];
+const COPY = ["manifest.json", "_locales", "bridge.js", "background.js", "popup.html", "icons"];
 
 function strip(file) {
   const src = fs.readFileSync(path.join(ROOT, file), "utf8");
